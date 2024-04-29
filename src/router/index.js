@@ -34,7 +34,13 @@ export const constantRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login/index'),
-    hidden: true
+    hidden: true,
+    children: [],
+  },
+
+  {
+    path: "/register",
+    component: () => import('@/views/register/register'),
   },
 
   {
@@ -161,7 +167,7 @@ export const constantRoutes = [
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/404', hidden: true },
 ]
 
 const createRouter = () => new Router({
